@@ -22,4 +22,4 @@ Loial is a modern landing page for a hair care shop specializing in premium prod
 ---
 
 ## Live Demo
-[Visit Loial Online](link)
+[Visit Loial Online](https://dmitriikaban.github.io/tum-web-lab2/)
