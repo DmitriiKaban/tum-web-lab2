@@ -14,12 +14,5 @@ Loial is a modern landing page for a hair care shop specializing in premium prod
 
 ---
 
-## Screenshots
-![Footer](https://github.com/user-attachments/assets/ccf8a834-a012-4394-b3cf-9e031c1343bb)
-![Homepage](https://github.com/user-attachments/assets/7a185b59-e4dd-4b34-84fb-544ba2f72932)
-![FAQ Section](https://github.com/user-attachments/assets/43aff3c8-9989-4130-a660-84fdbd34096e)
-
----
-
 ## Live Demo
 [Visit Loial Online](https://dmitriikaban.github.io/tum-web-lab2/)
