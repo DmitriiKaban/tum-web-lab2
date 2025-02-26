@@ -12,7 +12,7 @@ header {
     padding: 20px 0;
     text-align: center;
     position: sticky; /* Make the header stick to the top */
-    top: 0; /* Align it to the top of the viewport */
+    top: 0;
     z-index: 100; /* Ensure it's above other content */
 }
 
@@ -46,7 +46,28 @@ nav a {
 }
 
 #about {
-    background-color: #e8f5e9;
+    background-color: lightskyblue;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    position: relative;
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+#about > * {
+    position: relative;
+    z-index: 2;
 }
 
 #gallery {
@@ -144,8 +165,28 @@ form button {
     color: black;
     text-align: center;
     padding: 150px 20px;
-    background-color: rgba(256,256,256, 0.5);
+    background-color: rgba(256, 256, 256, 0.5);
     background-blend-mode: overlay;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .landing-page {
+        padding: 100px 10px; /* Reduce padding for smaller screens */
+    }
+
+    .landing-page h2 {
+        font-size: 2.5em; /* Adjust font size for smaller screens */
+    }
+
+    .landing-page p {
+        font-size: 1em; /* Adjust font size for smaller screens */
+    }
+
+    .landing-page .cta {
+        padding: 12px 25px; /* Adjust button padding */
+        font-size: 1em; /* Adjust button font size */
+    }
 }
 
 .landing-page h2 {
@@ -160,8 +201,12 @@ form button {
 
 .landing-page .cta {
     background-color: #e74c3c;
+    color: white; /* Ensure text is visible */
     padding: 15px 30px;
     font-size: 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
 }
 
 .section h2 {
@@ -245,25 +290,110 @@ header nav a:hover {
     margin-bottom: 20px; /* Space between images and paragraph */
     flex-wrap: wrap; /* Allow images to wrap to the next line on smaller screens */
 }
-
 .gallery-images {
     display: flex;
     justify-content: center;
-    gap: 2%; /* Gap between images is 2% */
+    gap: 2%;
     margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
 .gallery-images img {
-    max-width: 400px; /* Adjust as needed */
+    max-width: 400px;
     height: auto;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive adjustments (optional) */
+#mobile-offer {
+    display: none;
+    background-color: #fce4ec;
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+}
+
+#mobile-offer h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#mobile-offer p {
+    margin-bottom: 20px;
+}
+
+#mobile-offer .cta {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#mascot-img {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    animation: mascotEnter 1s ease-out 3s forwards;
+    cursor: pointer;
+    transform: scale(0);
+}
+
+@keyframes mascotEnter {
+    0% {
+        transform: scale(0) translateY(20px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+#mascot {
+    position: fixed;
+    bottom: 130px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#mascot-message {
+    margin-left: 10px;
+    visibility: hidden;
+    font-weight: bold; /* Make the message bold */
+    color: yellow; /* Change the color to yellow */
+}
+
+#mascot:hover #mascot-message {
+    visibility: visible;
+}
+
 @media (max-width: 768px) {
+    header {
+        display: none;
+    }
+
     .gallery-images img {
         max-width: 100%; /* Make images full-width on smaller screens */
+    }
+
+    .landing-page {
+        padding-top: 50px;
+    }
+
+    .section {
+        padding-top: 30px;
+    }
+
+    .gallery-images img {
+        max-width: 100%;
+    }
+
+    .gallery-images {
+        gap: 5%;
+    }
+
+    #mobile-offer {
+        display: block;
     }
 }
